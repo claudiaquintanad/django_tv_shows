@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+<body>
+    <div class="container" action="oneshow">
+        <h1>TV Show {{programa.id}}</h1>
+        <p> Title: {{programa.title}}</p>
+        <p> Network: {{programa.network}}</p>
+        <p> Release Sate: {{programa.release_date}}</p>
+        <p> Description: {{programa.description}}</p>
+        <div>
+            <p>Last Updated: {{programa.updated_at}}
+        </div>
+        <div class="row d-block">
+            <a href='/shows/{{programa.id}}/edit'>Edit</a>
+            <a href="/shows/{{programa.id}}/delete">Delete</a>
+        </div>
+    </div>
+</body>
+</html>

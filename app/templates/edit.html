@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Show</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row d-block">
+            <a class="text-right" href="/shows"> Go Back </a>
+        </div>
+        <form action="/shows/edit" method="post">
+            {% csrf_token %}
+            <h2>Edit Show</h2>
+            <label for="title" class="d-block">Title</label>
+            <input type="text" id="title" name="ed_title" value="{{programa.title}}">
+            <label for="network" class="d-inline-block">Network</label>
+            <input type="text" id="network" name="ed_network" value="{{programa.network}}">
+            <label for="date">Release Date</label>
+            <input type="date" id="date" name="ed_date" value="{{programa.release_date|date:"Y-m-d"}}">
+            <p class="mt-2"></p>
+            <label for="ed_des">Description</label>
+            <input type="text" id="ed_des" name="ed_des" value="{{programa.description}}">
+            <input type="hidden" id="id_show" name="id_show" value="{{programa.id}}">
+            <input type="submit" value="Update" class="d-block mt-2">
+        </form>
+        <div class="row d-block ">
+            <a class="text-center mt-3" href="/shows/{{programa.id}}"> Go to Show </a>
+        </div>
+    </div>
+</body>
+</html>

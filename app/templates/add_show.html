@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Show</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row d-block">
+            <a class="text-right" href="/shows"> Go Back </a>
+        </div>
+        <form action="/shows/create" method="post">
+            {% csrf_token %}
+            <h2>Add a New Show</h2>
+            <label for="title" class="d-block">Title</label>
+            <input type="text" id="title" name="title">
+            <label for="network" class="d-inline-block">Network</label>
+            <input type="text" id="network" name="network">
+            <label for="date">Release Date</label>
+            <input type="date" id="date" name="date">
+            <p class="mt-2">Description</p>
+            <textarea name="des" class="d-block"></textarea>
+            <input type="submit" value="Create" class="d-block mt-2">
+        </form>
+    </div>
+</body>
+</html>
